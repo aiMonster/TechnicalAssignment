@@ -1,9 +1,12 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
+using TechnicalAsignment.Data;
+using TechnicalAsignment.Domain.DTO;
 
 namespace TechnicalAsignment
 {
@@ -12,6 +15,15 @@ namespace TechnicalAsignment
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+        }
+
+        private void InitializeAutoMapper()
+        {
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<Transaction, TransactionDTO>();
+                cfg.CreateMap<Customer, CustomerDTO>();
+            });
         }
     }
 }
