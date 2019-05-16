@@ -1,0 +1,24 @@
+﻿CREATE DATABASE TechnicalAsignmentDB;
+GO
+
+USE TechnicalAsignmentDB;
+
+CREATE TABLE Customers
+(
+	Id BIGINT PRIMARY KEY,
+	[Name] NVARCHAR(30) NOT NULL,
+	Email NVARCHAR(25) NOT NULL UNIQUE,
+	Mobile BIGINT	
+);
+GO
+
+CREATE TABLE Transactions
+(
+	Id INT PRIMARY KEY IDENTITY,
+	CustomerId BIGINT NOT NULL,
+	[Date] DATETIME NOT NULL,
+	Amount DECIMAL(18,2) NOT NULL,
+	CurrencyCode VARCHAR(3) NOT NULL,
+	[Status] TINYINT NOT NULL,
+	FOREIGN KEY (CustomerID) REFERENCES Customers (Id)
+);
