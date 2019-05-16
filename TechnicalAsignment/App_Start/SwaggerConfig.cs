@@ -16,7 +16,7 @@ namespace TechnicalAsignment
             GlobalConfiguration.Configuration
                 .EnableSwagger(c =>
                     {                       
-                        c.SingleApiVersion("v1", "TechnicalAsignment");                        
+                        c.SingleApiVersion("v1", "Technical Assignment");                        
                     })
                 .EnableSwaggerUi();
         }

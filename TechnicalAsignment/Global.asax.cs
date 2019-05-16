@@ -15,6 +15,8 @@ namespace TechnicalAsignment
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+
+            InitializeAutoMapper();
         }
 
         private void InitializeAutoMapper()
